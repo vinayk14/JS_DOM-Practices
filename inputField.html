@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+     <input type="text" class="input" placeholder="Enter Name">
+     <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+        let inputBox = document.querySelector("input")
+        let btn = document.querySelector("button")
+        let form = document.querySelector("form")
+        let para = document.createElement("p")
+        
+        form.addEventListener("submit", submit)
+        let name = ""
+        let nameLength = 0
+      
+        function submit(e){
+            e.preventDefault()
+           console.log(name,nameLength)
+            if(nameLength > 3){
+                para.innerText=name
+                inputBox.value = ""
+            }else {
+                inputBox.value = ""
+                alert("Name is to Short")
+              
+            }
+            
+           
+        }
+        document.body.append(para)
+        
+
+        inputBox.addEventListener("input", checker)
+
+        function checker(){
+             name= inputBox.value
+             nameLength = inputBox.value.length
+            if(inputBox.value.length <= 3){
+                inputBox.style.outline = "none"
+                inputBox.style.border = "2px solid red"
+            }else if(inputBox.value.length > 3){
+                inputBox.style.outline = "none"
+                inputBox.style.border = "2px solid green"
+            }
+        }
+        
+
+
+    </script>
+</body>
+</html>

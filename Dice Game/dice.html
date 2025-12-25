@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+</head>
+<body>
+    <div>
+        <h1>Dice Game</h1>
+        <label for="person1">Player 1</label>
+        <input type="text" id="person1" placeholder="Enter Player 1 Name">
+        <button id="rollDice" button-index="0">Roll Dice</button>
+        <span></span>
+        <br><br>
+        <label for="person2">Player 2</label>
+        <input type="text" id="person2" placeholder="Enter Player 2 Name">
+        <button id="rollDice" button-index="1">Roll Dice</button>
+        <span></span>
+        <br><br>
+        <label for="person3">Player 3</label>
+        <input type="text" id="person3" placeholder="Enter Player 3 Name">
+        <button id="rollDice" button-index="2">Roll Dice</button>
+        <span></span>
+        <br><br>
+        <label for="person4">Player 4</label>
+        <input type="text" id="person4" placeholder="Enter Player 4 Name">
+        <button id="rollDice" button-index="3">Roll Dice</button>
+        <span></span>
+        <br><br>
+        <div id="winnerMessage"></div>
+
+    </div>
+
+    <script>
+
+        let playerInputs = document.querySelectorAll("input");
+        let rollButtons = document.querySelectorAll("button");
+        let results = document.querySelectorAll("span");
+        let winnerMsg = document.querySelector("#winnerMessage");
+
+        // Attach event listeners to each roll button
+        for (let i = 0; i < rollButtons.length; i++) {
+            rollButtons[i].addEventListener("click", rollDice);
+        }
+        
+        let clickedCount = 0;
+
+        // Function to handle dice roll
+        function rollDice(e){
+            clickedCount++
+            let clickedButton = e.target;
+            let buttonIndex = clickedButton.getAttribute("button-index");
+
+            let choices = [1,2,3,4,5,6];
+            let randomChoice = parseInt(Math.random()*choices.length);
+            let score = choices[randomChoice];
+
+            // Display the score for the respective player
+            results[buttonIndex].innerText = score
+
+            // Disable button after rolling
+            clickedButton.disabled = true;
+
+
+            // Check if all buttons have been clicked
+            if(clickedCount === rollButtons.length){
+                let max = 0
+                 
+                   // Find the maximum score
+                for(let spantag of results){
+                    let val = spantag.innerText;
+                    if(val > max){
+                        max = val;
+                    }
+                }
+                // Find PlayerName and Announce the winner
+                for(let i=0; i<results.length; i++){
+                    if(results[i].innerText == max){
+                       winnerMsg.innerText = "Winner is: " + playerInputs[i].value+ " with score: " + max;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

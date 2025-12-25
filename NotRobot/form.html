@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset=utf-8 />
+		<title>Return first and last name from a form</title>
+</head>
+
+<body>
+	<form id="form">
+		First name: <input type="text" name="fname" id ="fname"><br>
+		Last name: <input type="text" name="lname" id="lname"><br>
+		<input type="submit" value="Submit" id="submit">
+	</form>
+	
+    <script>
+        let form = document.querySelector("#form")
+
+        form.addEventListener("submit", display)
+        function display(e){
+            e.preventDefault()
+            flag = true
+            let fName = document.querySelector("#fname").value
+            let lName = document.querySelector("#lname").value
+
+            if(fName&&lName){
+                 alert(`${fName}  ${lName}`)
+            }
+
+
+        }
+    </script>
+</body>
+</html>

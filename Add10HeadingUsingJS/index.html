@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heading">
+        <h1>This is a Heading</h1>
+
+    </div>
+    
+    <script>
+        let headingDiv = document.querySelector('.heading');
+        let headingName = ["Home", "About", "Services", "Contact", "Blog", "Portfolio", "Careers", "FAQ", "Testimonials", "Gallery"];
+
+        for(let i=0; i<headingName.length; i++){
+            let h1= document.createElement("h1")
+            h1.innerText = headingName[i]
+            headingDiv.append(h1)
+        }
+    </script>
+</body>
+</html>

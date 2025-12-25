@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter your Bill">
+    <br><br>
+    <button>Calculate Tip</button>
+    <br><br>
+    <div id="tipAmount"></div>
+
+    <script>
+
+        let billBox = document.querySelector("input")
+        let btn = document.querySelector("button")
+
+        btn.addEventListener("click", tipPercent)
+
+
+        function tipPercent(){
+            let billAmount = Number(billBox.value)
+            let tip = billAmount * 5/100
+            //console.log("Your tip amount is: " + tip);
+            let tipDiv = document.querySelector("#tipAmount")
+            tipDiv.innerText = "Total tip Amount is:" + tip
+        }
+
+
+    </script>
+</body>
+</html>

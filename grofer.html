@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+    <!-- the entire body must be written by student -->
+    <table id="tableList" style="width: 100%">
+    <caption>
+      Monthly savings
+    </caption>
+    <tr>
+      <th>Item</th>
+      <th>Prices in Rs</th>
+    </tr>
+    <tr>
+      <td class="item">Tea</td>
+      <td class="price">50</td>
+    </tr>
+    <tr>
+      <td class="item">Coffee</td>
+      <td class="price">70</td>
+    </tr>
+    <tr>
+      <td class="item">Biscuits</td>
+      <td class="price">100</td>
+    </tr>
+    <tr>
+      <td class="item">Rice</td>
+      <td class="price">130</td>
+    </tr>
+    <tr>
+      <td class="item">Milk</td>
+      <td class="price">50</td>
+    </tr>
+  </table>
+    <script>
+        const getSumBtn = document.createElement("button");
+        getSumBtn.append("Get Total Price");
+        document.body.appendChild(getSumBtn);
+
+        // Create new Para Element for data Screening
+
+        const ans = document.createElement("p")
+        ans.id="ans"
+        document.body.append(ans)
+
+      const getSum = () => {
+        //Add your code here
+        let price = document.querySelectorAll(".price")
+        let total =0
+        for(let i=0; i<price.length; i++){
+          total = total + + price[i].textContent
+        }
+         ans.textContent=`Total Amount is : ${total}`
+         // console.log(total)
+      };
+
+     getSumBtn.addEventListener("click", getSum);
+
+
+    </script>
+
+</body>
+
+</html>

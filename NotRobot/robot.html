@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check you are not a robot</h1>
+    <div class="container">
+    <img src="https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png"  class="img" id="1" alt="">
+    <img src="https://cloudinary-marketing-res.cloudinary.com/image/upload/w_1300/q_auto/f_auto/hiking_dog_mountain" class="img" id="2" alt="">
+    <img src="https://wpengine.com/wp-content/uploads/2021/05/optimize-images-1024x681.jpg" class="img" id="3" alt="">
+    <img src="https://png.pngtree.com/thumb_back/fh260/background/20240421/pngtree-stunning-4k-image-showcasing-the-beauty-of-nature-image_15718240.jpg" class="img" id="4" alt="">
+    <img src="https://img.freepik.com/free-photo/woman-beach-with-her-baby-enjoying-sunset_52683-144131.jpg?size=626&ext=jpg" class="img" id="5" alt="">
+    </div>
+    <div class="random"></div>
+
+
+    <script>
+        let container = document.querySelector(".container");
+        let img = document.querySelectorAll(".img");
+
+        let arr = [ "https://cdn.pixabay.com/photo/2018/08/04/11/30/draw-3583548_1280.png",
+            "https://cloudinary-marketing-res.cloudinary.com/image/upload/w_1300/q_auto/f_auto/hiking_dog_mountain",
+            "https://wpengine.com/wp-content/uploads/2021/05/optimize-images-1024x681.jpg",
+            "https://png.pngtree.com/thumb_back/fh260/background/20240421/pngtree-stunning-4k-image-showcasing-the-beauty-of-nature-image_15718240.jpg",
+            "https://img.freepik.com/free-photo/woman-beach-with-her-baby-enjoying-sunset_52683-144131.jpg?size=626&ext=jpg"
+]
+        let randomIndx =parseInt(Math.random()*arr.length)
+        let randomImg = arr[randomIndx]
+        let realImg = document.createElement("img")
+        realImg.src = randomImg
+        realImg.id = randomIndx + 1
+        //console.log(randomIndx)
+        container.append(realImg)
+        for(let i=0;i<img.length;i++){
+            img[i].addEventListener("click",HandleImg)
+        }
+        let alertBtn = false;
+        function HandleImg(e){
+            let SelectedImg = e.target
+            let SelectedImgId = SelectedImg.id
+          //console.log(SelectedImgId)
+
+          if(realImg.id === SelectedImgId){
+            alert("You are not a robot")
+            alertBtn = true;
+            }else{
+                alert("You are a robot")
+            }
+
+            //Page Reload After Alert Button Click
+            if(alertBtn){
+                window.location.reload()
+            }
+        }
+    </script>
+</body>
+</html>

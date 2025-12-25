@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="toss.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+   <div class="scoreboard">
+    Your Score : <span id ="human">0</span>
+     Computer Score : <span id ="computer">0</span>
+   </div>
+
+   <button id="head">Head</button>
+    <button id="tail">Tail</button>
+    </div>
+
+    <script>
+        let humanScore = document.querySelector("#human")
+        let computerScore = document.querySelector("#computer")
+        let buttons = document.querySelectorAll("button")
+
+        for(let t of buttons){
+            t.addEventListener("click", toss)
+        }
+
+        function toss(eventObj){
+            let targetButton = eventObj.target
+            let targetButtonId = targetButton.id
+
+            //tossing logic
+
+            let options = ["head", "tail"]
+            let randomIndex = parseInt(Math.random()*options.length)
+            let tossResult = options[randomIndex]
+
+            if(targetButtonId == tossResult){
+                humanScore.innerText++
+            }else{
+                computerScore.innerText++
+            }
+        }
+
+
+    </script>
+</body>
+</html>

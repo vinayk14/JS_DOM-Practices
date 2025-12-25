@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+	box-sizing:border-box
+}
+body{
+  background-color:#f6f6f6;
+  /* height:100vh; */
+  margin:0;
+  font-family: Arial, sans-serif;
+}
+
+/* ⭐ REAL LAYOUT CONTAINER */
+.container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  gap:80px;
+}
+/* body{
+	background-color:#f6f6f6;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	height:100vh;
+	gap:80px;
+} */
+.left{
+	width:450px;
+	/* margin-top:70px; */
+	display:inline-block;
+
+    img{
+        width: 550px;
+    }
+}
+.right{
+	width:360px
+}
+form{
+	display:flex;
+	width:300px;
+	background-color:white;
+	padding:20px;
+	border-radius:5px;
+	box-shadow:0 0 10px #ccc;
+	flex-direction:column;
+	gap:10px
+	
+}
+input{
+	border:1px solid #ccc;
+	border-radius:5px;
+	padding:10px;
+}
+button{
+  padding:12px;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
+  width:100%;              /* ⭐ prevents overlap */
+  display:block;           /* ⭐ prevents overlap */
+}
+.login{
+	background-color:#1877f2;
+	border-radius:5px;
+	padding:10px 20px;
+	color:white;
+	 border:none;
+}
+a{
+	text-decoration:none;
+	color:#1877f2;
+	text-align:center;
+	display:block;
+
+}
+.signup{
+	background-color:#42b72a;
+	border-radius:5px;
+	padding:10px 20px;
+	color: white;
+	 border:none;
+}
+
+    </style>
+</head>
+<body>
+     <div class="container">
+	  <div class="left">
+		  <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg" alt="Facebook logo" />
+	       
+	  </div>
+	  
+	  <div class="right">
+		  <form>
+		  <input type="text", id="email", placeholder="Email address or phone number">
+		  <input type="password", id="password", placeholder="Password">
+		  <button class="login">Log in</button>
+		  <a href="https://www.facebook.com/recover/initiate/?privacy_mutation_token=eyJ0eXBlIjowLCJjcmVhdGlvbl90aW1lIjoxNzY2NDc0ODQ0LCJjYWxsc2l0ZV9pZCI6MzgxMjI5MDc5NTc1OTQ2fQ%3D%3D&ars=facebook_login&next">Forgotten account?</a>
+		  <button class="signup">Create new account</button>	
+		  </form>
+	  </div>
+	</div>
+</body>
+</html>
