@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    border: 2px solid black;
+    /* padding: 20px; */
+    /* justify-content: center; */
+    /* flex-wrap:wrap-reverse ; */
+}
+.box{
+    border: 2px, dotted rgb(250, 77, 105);
+    margin: 10px;
+    padding: 10px;
+    /* justify-content:center; */
+}
