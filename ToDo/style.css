@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+
+    .task{
+    border: 2px solid darkgray;
+    width: 30%;
+    min-height: 400px; ;
+
+    h1{
+        background-color: lightsalmon;
+        color: black;
+        text-align: center;
+    }
+}
+}
+.taskcard{
+    margin: 2px;
+    background-color: blanchedalmond;
+    border: 2px solid green;
+    color: tomato;
+}
